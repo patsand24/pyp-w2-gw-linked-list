@@ -154,7 +154,7 @@ class LinkedList(AbstractLinkedList):
             self.start = previous_node.next
             return previous_node.elem
         
-        if index == None or index == list_size-1:
+        if index == None :# or index == list_size-1:
             # pop last element
             gen = iter(self)
             previous_link = self.start
