@@ -74,17 +74,18 @@ class LinkedList(AbstractLinkedList):
     
     
     def __ne__(self, other):
-        self_elem = self.start
-        other_elem = other.start
+        # self_elem = self.start
+        # other_elem = other.start
         
-        if not self_elem or not self_elem.next:
-            return self_elem != other_elem
-        while self_elem.next:
-            if self_elem != other_elem:
-                return True
-            self_elem = self_elem.next
-            other_elem = other_elem.next
-        return False
+        # if not self_elem or not self_elem.next:
+        #     return self_elem != other_elem
+        # while self_elem.next:
+        #     if self_elem != other_elem:
+        #         return True
+        #     self_elem = self_elem.next
+        #     other_elem = other_elem.next
+        # return False
+        return not self.__eq__(other)
     
         
     def __eq__(self, other):
@@ -106,6 +107,7 @@ class LinkedList(AbstractLinkedList):
         other_list = [each for each in enumerate(other)]
         if self_list == other_list:
             return True
+        return False
             
             
     def append(self, elem):
