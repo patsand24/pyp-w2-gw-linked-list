@@ -132,38 +132,38 @@ class LinkedList(AbstractLinkedList):
         return counter
 
     def pop(self, index=None):
-    	list_size = self.count()
-    	if index > list_size-1 or list_size == 0:
-    	    raise IndexError
-    
-    	elif list_size == 1:
-                # def test_pop_with_a_single_element_list(self):
-                if index > 0:
-                    raise IndexError
-                else:
-                    # clear list
-                    previous_node = self.start
-                    self.start = None 
-                    self.end = None
-                    return previous_node.elem
-        elif index == 0: 
-                # def test_pop_removes_first_item(self):
+        list_size = self.count()
+        if index > list_size-1 or list_size == 0:
+            raise IndexError
+        
+        elif list_size == 1:
+            # def test_pop_with_a_single_element_list(self):
+            if index > 0:
+                raise IndexError
+            else:
+                # clear list
                 previous_node = self.start
-                self.start = previous_node.next
-                return previous_node.elem
-    
-    	if index == None or index == list_size-1:
-    	    # pop last element
-    	    gen = iter(self)
-    	    previous_link = self.start
-    	    for link in gen:
-    	        if link.next is None:
-    	            previous_link.next = None
-    	            self.end = previous_link
-    	            return link.elem
-    	        previous_link = link
-    	    
-    	else:
+                self.start = None 
+                self.end = None
+            return previous_node.elem
+        elif index == 0: 
+            # def test_pop_removes_first_item(self):
+            previous_node = self.start
+            self.start = previous_node.next
+            return previous_node.elem
+        
+        if index == None or index == list_size-1:
+            # pop last element
+            gen = iter(self)
+            previous_link = self.start
+            for link in gen:
+                if link.next is None:
+                    previous_link.next = None
+                    self.end = previous_link
+                    return link.elem
+                previous_link = link
+        
+        else:
             #element is between start & end
             gen = iter(self)
             count = 0
@@ -175,14 +175,3 @@ class LinkedList(AbstractLinkedList):
                     return node.elem
                 previous_node = node
                 count += 1
-	        
-   
-        
-       
-        
-        
-    
-                        
-                
-       
-            
