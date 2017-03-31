@@ -135,10 +135,17 @@ class LinkedList(AbstractLinkedList):
 
     def pop(self, index=None):
         list_size = self.count()
-        if index > list_size-1 or list_size == 0:
-            raise IndexError
         
-        elif list_size == 1:
+        if isinstance(index, type(None)):
+            if list_size == 0:
+                raise IndexError
+                
+        elif not isinstance(index, type(None)):
+            if index > list_size-1 or list_size == 0:
+                raise IndexError
+        
+        ###
+        if list_size == 1:
             # def test_pop_with_a_single_element_list(self):
             if index > 0:
                 raise IndexError
@@ -154,7 +161,7 @@ class LinkedList(AbstractLinkedList):
             self.start = previous_node.next
             return previous_node.elem
         
-        if index == None :# or index == list_size-1:
+        if index == None:
             # pop last element
             gen = iter(self)
             previous_link = self.start
