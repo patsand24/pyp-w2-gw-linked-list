@@ -147,14 +147,12 @@ class LinkedList(AbstractLinkedList):
         ###
         if list_size == 1:
             # def test_pop_with_a_single_element_list(self):
-            if index > 0:
-                raise IndexError
-            else:
-                # clear list
-                previous_node = self.start
-                self.start = None 
-                self.end = None
+            # clear list
+            previous_node = self.start
+            self.start = None 
+            self.end = None
             return previous_node.elem
+            
         elif index == 0: 
             # def test_pop_removes_first_item(self):
             previous_node = self.start
